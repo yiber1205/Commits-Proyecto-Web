@@ -41,7 +41,7 @@ body {
 
 /* Header */
 .header {
-  background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
+  background: linear-gradient(135deg, #1e293b, #0f172a);
   border-bottom: 1px solid var(--border-color);
   padding: 2rem 0;
 }
