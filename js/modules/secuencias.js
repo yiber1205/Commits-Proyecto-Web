@@ -11,6 +11,9 @@ export function analizarSecuencia(arr) {
   if (!Array.isArray(arr) || arr.length < 3) {
     throw new Error("Se requieren al menos 3 terminos para detectar un patron.");
   }
+    if (!arr.every(num => Number.isFinite(num))) {
+    throw new Error("Todos los terminos deben ser numeros validos.");
+  }
 
   const n = arr.length;
 
