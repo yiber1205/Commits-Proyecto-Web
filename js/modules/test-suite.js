@@ -175,6 +175,28 @@ export const tests = [
         detalle: `Calculo JS crudo: ${calculo}. Comparacion estricta === da: ${comparacionNaive}. Comparacion segura con Epsilon da: ${comparacionRobusta}.`
       };
     }
+    },
+  {
+    id: 11,
+    nombre: "Detector rechaza valores invalidos",
+    categoria: "Secuencias",
+    esCascarita: false,
+    ejecutar: () => {
+      let rechazoCorrecto = false;
+
+      try {
+        analizarSecuencia([2, NaN, 6]);
+      } catch (error) {
+        rechazoCorrecto = true;
+      }
+
+      return {
+        pass: rechazoCorrecto,
+        detalle: rechazoCorrecto
+          ? "Correcto: rechazo el valor NaN."
+          : "Error: acepto un valor invalido."
+      };
+    }
   }
 ];
 
